@@ -8,7 +8,7 @@
 ![Themes](https://img.shields.io/badge/themes-6-A6E3A1?style=for-the-badge&labelColor=%23424242)
 ![License](https://img.shields.io/badge/license-MIT-B2FF59?style=for-the-badge&labelColor=%23424242)
 
-[![桌面](screenshots/desktop.png)](screenshots/desktop.png)
+[![桌面](screenshots/desktop.png?v=2)](screenshots/desktop.png?v=2)
 
 根据自己使用习惯慢慢手搓的键盘流美化，除了waybar与hyprland别无他物
 
@@ -24,7 +24,7 @@
 
 | fastfetch + Nemo | wlogout（`Super+Delete`） |
 |:---:|:---:|
-| [![fastfetch 与 Nemo](screenshots/fastfetch.png)](screenshots/fastfetch.png) | [![wlogout](screenshots/wlogout.png)](screenshots/wlogout.png) |
+| [![fastfetch 与 Nemo](screenshots/fastfetch.png?v=2)](screenshots/fastfetch.png?v=2) | [![wlogout](screenshots/wlogout.png)](screenshots/wlogout.png) |
 
 > [!NOTE]
 > 基于1920×1200、与`BAT0` 电池，可能需根据设备调整，详见[这里](docs/install.md#已知问题)

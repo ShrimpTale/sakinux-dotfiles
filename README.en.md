@@ -10,7 +10,7 @@ English · [中文](README.md)
 ![Themes](https://img.shields.io/badge/themes-6-A6E3A1?style=for-the-badge&labelColor=%23424242)
 ![License](https://img.shields.io/badge/license-MIT-B2FF59?style=for-the-badge&labelColor=%23424242)
 
-[![desktop](screenshots/desktop.png)](screenshots/desktop.png)
+[![desktop](screenshots/desktop.png?v=2)](screenshots/desktop.png?v=2)
 
 Built up slowly around my own habits. Nothing but waybar and Hyprland.
 
@@ -24,7 +24,7 @@ Heavy use of vibe coding.
 
 | fastfetch + Nemo | wlogout (`Super+Delete`) |
 |:---:|:---:|
-| [![fastfetch and Nemo](screenshots/fastfetch.png)](screenshots/fastfetch.png) | [![wlogout](screenshots/wlogout.png)](screenshots/wlogout.png) |
+| [![fastfetch and Nemo](screenshots/fastfetch.png?v=2)](screenshots/fastfetch.png?v=2) | [![wlogout](screenshots/wlogout.png)](screenshots/wlogout.png) |
 
 > [!NOTE]
 > Tuned for 1920×1200 and a `BAT0` battery, so you may need to adjust. What to change is listed [here](docs/install.md#已知问题) (in Chinese).
