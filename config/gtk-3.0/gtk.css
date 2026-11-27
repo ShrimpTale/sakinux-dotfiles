@@ -1,0 +1,30 @@
+/* ===== 统一 Nemo 背景为 Catppuccin base（补偿后） ===== */
+.nemo-window .view,
+.nemo-window .main-view,
+.nemo-window .content-view,
+.nemo-window .sidebar,
+.nemo-window .nemo-window-pane,
+.nemo-window toolbar,
+.nemo-window menubar,
+.nemo-window statusbar {
+    background-color: rgba(32, 34, 53, 0.78);
+}
+
+/* ===== 选中高亮（必须保留，否则看不出选中） ===== */
+.nemo-window .view:selected,
+.nemo-window .view *:selected {
+    background-color: #cba6f7;
+    color: #1e1e2e;
+}
+
+/* ===== 拖拽选择框：半透明猫酱紫（强制覆盖） ===== */
+rubberband,
+treeview rubberband,
+treeview.view rubberband,
+.nemo-window .view rubberband,
+.nemo-window rubberband,
+.nemo-window * rubberband {
+    background: rgba(203, 166, 247, 0.3);
+    background-color: rgba(203, 166, 247, 0.3);
+    border: 1px solid rgba(203, 166, 247, 0.8);
+}

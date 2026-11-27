@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="1268" viewBox="0 0 920 1268">
+<rect width="100%" height="100%" fill="#11111b"/>
+<text x="40" y="52" fill="#cdd6f4" font-family="JetBrainsMono Nerd Font,monospace" font-size="26">Catppuccin Mocha  →  Catppuccin Latte</text>
+<text x="40" y="82" fill="#7f849c" font-family="JetBrainsMono Nerd Font,monospace" font-size="15">左=现状快照(暗)  右=同格式创作的亮色版  26 槽位 1:1 角色对齐</text>
+<text x="60" y="112" fill="#9399b2" font-family="monospace" font-size="14">Mocha</text>
+<text x="500" y="112" fill="#9399b2" font-family="monospace" font-size="14">Latte</text>
+<rect x="60" y="120" width="58" height="24" rx="5" fill="#f5e0dc" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="137" fill="#cdd6f4" font-family="monospace" font-size="14">rosewater</text>
+<text x="250" y="137" fill="#7f849c" font-family="monospace" font-size="13">#f5e0dc</text>
+<rect x="500" y="120" width="58" height="24" rx="5" fill="#dc8a78" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="137" fill="#cdd6f4" font-family="monospace" font-size="14">rosewater</text>
+<text x="690" y="137" fill="#7f849c" font-family="monospace" font-size="13">#dc8a78</text>
+<rect x="60" y="154" width="58" height="24" rx="5" fill="#f2cdcd" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="171" fill="#cdd6f4" font-family="monospace" font-size="14">flamingo</text>
+<text x="250" y="171" fill="#7f849c" font-family="monospace" font-size="13">#f2cdcd</text>
+<rect x="500" y="154" width="58" height="24" rx="5" fill="#dd7878" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="171" fill="#cdd6f4" font-family="monospace" font-size="14">flamingo</text>
+<text x="690" y="171" fill="#7f849c" font-family="monospace" font-size="13">#dd7878</text>
+<rect x="60" y="188" width="58" height="24" rx="5" fill="#f5c2e7" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="205" fill="#cdd6f4" font-family="monospace" font-size="14">pink</text>
+<text x="250" y="205" fill="#7f849c" font-family="monospace" font-size="13">#f5c2e7</text>
+<rect x="500" y="188" width="58" height="24" rx="5" fill="#ea76cb" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="205" fill="#cdd6f4" font-family="monospace" font-size="14">pink</text>
+<text x="690" y="205" fill="#7f849c" font-family="monospace" font-size="13">#ea76cb</text>
+<rect x="60" y="222" width="58" height="24" rx="5" fill="#cba6f7" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="239" fill="#cdd6f4" font-family="monospace" font-size="14">mauve</text>
+<text x="250" y="239" fill="#7f849c" font-family="monospace" font-size="13">#cba6f7</text>
+<rect x="500" y="222" width="58" height="24" rx="5" fill="#8839ef" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="239" fill="#cdd6f4" font-family="monospace" font-size="14">mauve</text>
+<text x="690" y="239" fill="#7f849c" font-family="monospace" font-size="13">#8839ef</text>
+<rect x="60" y="256" width="58" height="24" rx="5" fill="#f38ba8" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="273" fill="#cdd6f4" font-family="monospace" font-size="14">red</text>
+<text x="250" y="273" fill="#7f849c" font-family="monospace" font-size="13">#f38ba8</text>
+<rect x="500" y="256" width="58" height="24" rx="5" fill="#d20f39" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="273" fill="#cdd6f4" font-family="monospace" font-size="14">red</text>
+<text x="690" y="273" fill="#7f849c" font-family="monospace" font-size="13">#d20f39</text>
+<rect x="60" y="290" width="58" height="24" rx="5" fill="#eba0ac" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="307" fill="#cdd6f4" font-family="monospace" font-size="14">maroon</text>
+<text x="250" y="307" fill="#7f849c" font-family="monospace" font-size="13">#eba0ac</text>
+<rect x="500" y="290" width="58" height="24" rx="5" fill="#e64553" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="307" fill="#cdd6f4" font-family="monospace" font-size="14">maroon</text>
+<text x="690" y="307" fill="#7f849c" font-family="monospace" font-size="13">#e64553</text>
+<rect x="60" y="324" width="58" height="24" rx="5" fill="#fab387" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="341" fill="#cdd6f4" font-family="monospace" font-size="14">peach</text>
+<text x="250" y="341" fill="#7f849c" font-family="monospace" font-size="13">#fab387</text>
+<rect x="500" y="324" width="58" height="24" rx="5" fill="#fe640b" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="341" fill="#cdd6f4" font-family="monospace" font-size="14">peach</text>
+<text x="690" y="341" fill="#7f849c" font-family="monospace" font-size="13">#fe640b</text>
+<rect x="60" y="358" width="58" height="24" rx="5" fill="#f9e2af" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="375" fill="#cdd6f4" font-family="monospace" font-size="14">yellow</text>
+<text x="250" y="375" fill="#7f849c" font-family="monospace" font-size="13">#f9e2af</text>
+<rect x="500" y="358" width="58" height="24" rx="5" fill="#df8e1d" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="375" fill="#cdd6f4" font-family="monospace" font-size="14">yellow</text>
+<text x="690" y="375" fill="#7f849c" font-family="monospace" font-size="13">#df8e1d</text>
+<rect x="60" y="392" width="58" height="24" rx="5" fill="#a6e3a1" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="409" fill="#cdd6f4" font-family="monospace" font-size="14">green</text>
+<text x="250" y="409" fill="#7f849c" font-family="monospace" font-size="13">#a6e3a1</text>
+<rect x="500" y="392" width="58" height="24" rx="5" fill="#40a02b" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="409" fill="#cdd6f4" font-family="monospace" font-size="14">green</text>
+<text x="690" y="409" fill="#7f849c" font-family="monospace" font-size="13">#40a02b</text>
+<rect x="60" y="426" width="58" height="24" rx="5" fill="#94e2d5" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="443" fill="#cdd6f4" font-family="monospace" font-size="14">teal</text>
+<text x="250" y="443" fill="#7f849c" font-family="monospace" font-size="13">#94e2d5</text>
+<rect x="500" y="426" width="58" height="24" rx="5" fill="#179299" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="443" fill="#cdd6f4" font-family="monospace" font-size="14">teal</text>
+<text x="690" y="443" fill="#7f849c" font-family="monospace" font-size="13">#179299</text>
+<rect x="60" y="460" width="58" height="24" rx="5" fill="#89dceb" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="477" fill="#cdd6f4" font-family="monospace" font-size="14">sky</text>
+<text x="250" y="477" fill="#7f849c" font-family="monospace" font-size="13">#89dceb</text>
+<rect x="500" y="460" width="58" height="24" rx="5" fill="#04a5e5" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="477" fill="#cdd6f4" font-family="monospace" font-size="14">sky</text>
+<text x="690" y="477" fill="#7f849c" font-family="monospace" font-size="13">#04a5e5</text>
+<rect x="60" y="494" width="58" height="24" rx="5" fill="#74c7ec" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="511" fill="#cdd6f4" font-family="monospace" font-size="14">sapphire</text>
+<text x="250" y="511" fill="#7f849c" font-family="monospace" font-size="13">#74c7ec</text>
+<rect x="500" y="494" width="58" height="24" rx="5" fill="#209fb5" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="511" fill="#cdd6f4" font-family="monospace" font-size="14">sapphire</text>
+<text x="690" y="511" fill="#7f849c" font-family="monospace" font-size="13">#209fb5</text>
+<rect x="60" y="528" width="58" height="24" rx="5" fill="#89b4fa" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="545" fill="#cdd6f4" font-family="monospace" font-size="14">blue</text>
+<text x="250" y="545" fill="#7f849c" font-family="monospace" font-size="13">#89b4fa</text>
+<rect x="500" y="528" width="58" height="24" rx="5" fill="#1e66f5" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="545" fill="#cdd6f4" font-family="monospace" font-size="14">blue</text>
+<text x="690" y="545" fill="#7f849c" font-family="monospace" font-size="13">#1e66f5</text>
+<rect x="60" y="562" width="58" height="24" rx="5" fill="#b4befe" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="579" fill="#cdd6f4" font-family="monospace" font-size="14">lavender</text>
+<text x="250" y="579" fill="#7f849c" font-family="monospace" font-size="13">#b4befe</text>
+<rect x="500" y="562" width="58" height="24" rx="5" fill="#7287fd" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="579" fill="#cdd6f4" font-family="monospace" font-size="14">lavender</text>
+<text x="690" y="579" fill="#7f849c" font-family="monospace" font-size="13">#7287fd</text>
+<rect x="60" y="596" width="58" height="24" rx="5" fill="#cdd6f4" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="613" fill="#cdd6f4" font-family="monospace" font-size="14">text</text>
+<text x="250" y="613" fill="#7f849c" font-family="monospace" font-size="13">#cdd6f4</text>
+<rect x="500" y="596" width="58" height="24" rx="5" fill="#4c4f69" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="613" fill="#cdd6f4" font-family="monospace" font-size="14">text</text>
+<text x="690" y="613" fill="#7f849c" font-family="monospace" font-size="13">#4c4f69</text>
+<rect x="60" y="630" width="58" height="24" rx="5" fill="#bac2de" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="647" fill="#cdd6f4" font-family="monospace" font-size="14">subtext1</text>
+<text x="250" y="647" fill="#7f849c" font-family="monospace" font-size="13">#bac2de</text>
+<rect x="500" y="630" width="58" height="24" rx="5" fill="#5c5f77" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="647" fill="#cdd6f4" font-family="monospace" font-size="14">subtext1</text>
+<text x="690" y="647" fill="#7f849c" font-family="monospace" font-size="13">#5c5f77</text>
+<rect x="60" y="664" width="58" height="24" rx="5" fill="#a6adc8" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="681" fill="#cdd6f4" font-family="monospace" font-size="14">subtext0</text>
+<text x="250" y="681" fill="#7f849c" font-family="monospace" font-size="13">#a6adc8</text>
+<rect x="500" y="664" width="58" height="24" rx="5" fill="#6c6f85" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="681" fill="#cdd6f4" font-family="monospace" font-size="14">subtext0</text>
+<text x="690" y="681" fill="#7f849c" font-family="monospace" font-size="13">#6c6f85</text>
+<rect x="60" y="698" width="58" height="24" rx="5" fill="#9399b2" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="715" fill="#cdd6f4" font-family="monospace" font-size="14">overlay2</text>
+<text x="250" y="715" fill="#7f849c" font-family="monospace" font-size="13">#9399b2</text>
+<rect x="500" y="698" width="58" height="24" rx="5" fill="#7c7f93" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="715" fill="#cdd6f4" font-family="monospace" font-size="14">overlay2</text>
+<text x="690" y="715" fill="#7f849c" font-family="monospace" font-size="13">#7c7f93</text>
+<rect x="60" y="732" width="58" height="24" rx="5" fill="#7f849c" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="749" fill="#cdd6f4" font-family="monospace" font-size="14">overlay1</text>
+<text x="250" y="749" fill="#7f849c" font-family="monospace" font-size="13">#7f849c</text>
+<rect x="500" y="732" width="58" height="24" rx="5" fill="#8c8fa1" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="749" fill="#cdd6f4" font-family="monospace" font-size="14">overlay1</text>
+<text x="690" y="749" fill="#7f849c" font-family="monospace" font-size="13">#8c8fa1</text>
+<rect x="60" y="766" width="58" height="24" rx="5" fill="#6c7086" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="783" fill="#cdd6f4" font-family="monospace" font-size="14">overlay0</text>
+<text x="250" y="783" fill="#7f849c" font-family="monospace" font-size="13">#6c7086</text>
+<rect x="500" y="766" width="58" height="24" rx="5" fill="#9ca0b0" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="783" fill="#cdd6f4" font-family="monospace" font-size="14">overlay0</text>
+<text x="690" y="783" fill="#7f849c" font-family="monospace" font-size="13">#9ca0b0</text>
+<rect x="60" y="800" width="58" height="24" rx="5" fill="#585b70" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="817" fill="#cdd6f4" font-family="monospace" font-size="14">surface2</text>
+<text x="250" y="817" fill="#7f849c" font-family="monospace" font-size="13">#585b70</text>
+<rect x="500" y="800" width="58" height="24" rx="5" fill="#acb0be" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="817" fill="#cdd6f4" font-family="monospace" font-size="14">surface2</text>
+<text x="690" y="817" fill="#7f849c" font-family="monospace" font-size="13">#acb0be</text>
+<rect x="60" y="834" width="58" height="24" rx="5" fill="#45475a" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="851" fill="#cdd6f4" font-family="monospace" font-size="14">surface1</text>
+<text x="250" y="851" fill="#7f849c" font-family="monospace" font-size="13">#45475a</text>
+<rect x="500" y="834" width="58" height="24" rx="5" fill="#bcc0cc" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="851" fill="#cdd6f4" font-family="monospace" font-size="14">surface1</text>
+<text x="690" y="851" fill="#7f849c" font-family="monospace" font-size="13">#bcc0cc</text>
+<rect x="60" y="868" width="58" height="24" rx="5" fill="#313244" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="885" fill="#cdd6f4" font-family="monospace" font-size="14">surface0</text>
+<text x="250" y="885" fill="#7f849c" font-family="monospace" font-size="13">#313244</text>
+<rect x="500" y="868" width="58" height="24" rx="5" fill="#ccd0da" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="885" fill="#cdd6f4" font-family="monospace" font-size="14">surface0</text>
+<text x="690" y="885" fill="#7f849c" font-family="monospace" font-size="13">#ccd0da</text>
+<rect x="60" y="902" width="58" height="24" rx="5" fill="#1e1e2e" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="919" fill="#cdd6f4" font-family="monospace" font-size="14">base</text>
+<text x="250" y="919" fill="#7f849c" font-family="monospace" font-size="13">#1e1e2e</text>
+<rect x="500" y="902" width="58" height="24" rx="5" fill="#eff1f5" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="919" fill="#cdd6f4" font-family="monospace" font-size="14">base</text>
+<text x="690" y="919" fill="#7f849c" font-family="monospace" font-size="13">#eff1f5</text>
+<rect x="60" y="936" width="58" height="24" rx="5" fill="#181825" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="953" fill="#cdd6f4" font-family="monospace" font-size="14">mantle</text>
+<text x="250" y="953" fill="#7f849c" font-family="monospace" font-size="13">#181825</text>
+<rect x="500" y="936" width="58" height="24" rx="5" fill="#e6e9ef" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="953" fill="#cdd6f4" font-family="monospace" font-size="14">mantle</text>
+<text x="690" y="953" fill="#7f849c" font-family="monospace" font-size="13">#e6e9ef</text>
+<rect x="60" y="970" width="58" height="24" rx="5" fill="#11111b" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="987" fill="#cdd6f4" font-family="monospace" font-size="14">crust</text>
+<text x="250" y="987" fill="#7f849c" font-family="monospace" font-size="13">#11111b</text>
+<rect x="500" y="970" width="58" height="24" rx="5" fill="#dce0e8" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="987" fill="#cdd6f4" font-family="monospace" font-size="14">crust</text>
+<text x="690" y="987" fill="#7f849c" font-family="monospace" font-size="13">#dce0e8</text>
+<text x="60" y="1018" fill="#f9e2af" font-family="monospace" font-size="14">— 附加语义槽（亮暗可脱钩）—</text>
+<rect x="60" y="1038" width="58" height="24" rx="5" fill="#ad8dd2" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="1055" fill="#cdd6f4" font-family="monospace" font-size="14">accent_soft</text>
+<text x="250" y="1055" fill="#7f849c" font-family="monospace" font-size="12">#ad8dd2</text>
+<rect x="500" y="1038" width="58" height="24" rx="5" fill="#7430cb" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="1055" fill="#cdd6f4" font-family="monospace" font-size="14">accent_soft</text>
+<text x="690" y="1055" fill="#7f849c" font-family="monospace" font-size="12">#7430cb</text>
+<rect x="60" y="1072" width="58" height="24" rx="5" fill="#303242" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="1089" fill="#cdd6f4" font-family="monospace" font-size="14">hover_bg</text>
+<text x="250" y="1089" fill="#7f849c" font-family="monospace" font-size="12">#303242</text>
+<rect x="500" y="1072" width="58" height="24" rx="5" fill="#bcc0cc" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="1089" fill="#cdd6f4" font-family="monospace" font-size="14">hover_bg</text>
+<text x="690" y="1089" fill="#7f849c" font-family="monospace" font-size="12">#bcc0cc</text>
+<rect x="60" y="1106" width="58" height="24" rx="5" fill="#ffffff" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="1123" fill="#cdd6f4" font-family="monospace" font-size="14">placeholder</text>
+<text x="250" y="1123" fill="#7f849c" font-family="monospace" font-size="12">#ffffff99</text>
+<rect x="500" y="1106" width="58" height="24" rx="5" fill="#4c4f69" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="1123" fill="#cdd6f4" font-family="monospace" font-size="14">placeholder</text>
+<text x="690" y="1123" fill="#7f849c" font-family="monospace" font-size="12">#4c4f6999</text>
+<rect x="60" y="1140" width="58" height="24" rx="5" fill="#313244" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="1157" fill="#cdd6f4" font-family="monospace" font-size="14">shadow</text>
+<text x="250" y="1157" fill="#7f849c" font-family="monospace" font-size="12">rgba(0, 0, 0, 0.8)</text>
+<rect x="500" y="1140" width="58" height="24" rx="5" fill="#313244" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="1157" fill="#cdd6f4" font-family="monospace" font-size="14">shadow</text>
+<text x="690" y="1157" fill="#7f849c" font-family="monospace" font-size="12">rgba(0, 0, 0, 0.15)</text>
+<rect x="60" y="1174" width="58" height="24" rx="5" fill="#313244" stroke="#585b70" stroke-width="1"/>
+<text x="130" y="1191" fill="#cdd6f4" font-family="monospace" font-size="14">panel_bg</text>
+<text x="250" y="1191" fill="#7f849c" font-family="monospace" font-size="12">rgba(30, 30, 46, 0.90)</text>
+<rect x="500" y="1174" width="58" height="24" rx="5" fill="#313244" stroke="#585b70" stroke-width="1"/>
+<text x="570" y="1191" fill="#cdd6f4" font-family="monospace" font-size="14">panel_bg</text>
+<text x="690" y="1191" fill="#7f849c" font-family="monospace" font-size="12">rgba(239, 241, 245, 0.90)</text>
+</svg>

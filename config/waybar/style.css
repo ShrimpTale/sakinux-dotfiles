@@ -1,0 +1,218 @@
+@import "mocha.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 16px;
+    color: @text;
+    border: none;
+    border-radius: 0;
+}
+
+/* 栏面：三块浮岛（左 / 中 / 右各一块），每块四角圆角 + 毛玻璃底。
+ * 模糊来自 Hyprland 层规则 waybar-glass（match namespace=waybar）；
+ * 岛与岛之间的缝隙是透明区，靠该规则的 ignore_alpha 排除 → 缝隙保持清透不糊。
+ * 底色用 shade(@mauve, …) 保持随主题换色（desktop-theme-switch 仍生效）。 */
+@define-color bar_glass shade(@mauve, 0.4);
+
+window#waybar {
+    background: transparent;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: alpha(@bar_glass, 0.45);
+    border-radius: 12px;                               /* 四个角都圆 */
+    border-top: 1px solid rgba(255, 255, 255, 0.14);   /* 玻璃上缘高光 */
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.10);
+    padding: 0 12px;
+    margin: 0 6px;
+}
+
+#workspaces button {
+    color: @surface1;
+    padding: 0 5px;
+}
+
+#workspaces button.active {
+    color: @mauve;
+}
+
+#workspaces button:hover {
+    color: @lavender;
+}
+
+#custom-clock,
+#network,
+#pulseaudio,
+#backlight,
+#custom-battery {
+    color: @text;
+}
+
+#custom-clock {
+    color: @blue;
+}
+
+/* 安卓小人：无底色，颜色跟 Ubuntu 容器图标（ROS 图标）一致，用主题 @text */
+#custom-android {
+    background: transparent;
+    color: @text;
+    border: none;
+    border-radius: 0;
+    padding: 0 4px;
+}
+
+#network {
+    color: @green;
+}
+
+#pulseaudio {
+    color: @peach;
+}
+
+#backlight {
+    color: @yellow;
+}
+
+#custom-battery {
+    color: @teal;
+}
+
+/* 低电量时变色（脚本输出 class=warning/critical） */
+#custom-battery.warning {
+    color: @yellow;
+}
+
+#custom-battery.critical {
+    color: @red;
+}
+tooltip {
+    background-color: @surface0;
+    color: @text;
+    border-radius: 8px;
+    padding: 8px 12px;
+    border: 1px solid @surface1;
+}
+/* 压过主题 gtk.css 的 tooltip.background（rgba(11,11,18,0.9)）：
+ * 圆角外的基底填充也用 @surface0，消除角落深色 rim */
+tooltip.background {
+    background-color: @surface0;
+    border-radius: 8px;
+}
+/* CSD 装饰层（阴影/基底）全透明，防止圆角外露出深色 */
+tooltip decoration {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+#custom-launcher {
+    color: @blue;
+    font-size: 19px;
+    padding-right: 10px;
+    margin-left: 10px;
+}
+
+#custom-temp {
+    color: @red;
+}
+
+#disk {
+    color: @sapphire;
+}
+
+#bluetooth {
+    color: @teal;
+}
+
+#tray,
+#tray > .passive,
+#tray > .active,
+#tray > .needs-attention,
+#tray image {
+    color: @mauve;
+}
+
+#custom-notification {
+    margin-left: 6px;
+    margin-right: 0;
+}
+
+#custom-updates {
+    margin-left: 0;
+}
+
+#custom-notification:hover,
+#custom-updates:hover {
+    color: @mauve;
+}
+
+/* ── Apple Music（Sidra）小播放器 ──
+ * 数据来自 sidra-player.sh（MPRIS）；未开 Sidra 时脚本输出为空，
+ * 模块配了 hide-empty-text，整组自动隐藏。 */
+#custom-music-prev,
+#custom-music-toggle,
+#custom-music-next {
+    color: @lavender;
+    padding: 0 3px;
+}
+
+#custom-music-prev:hover,
+#custom-music-next:hover,
+#custom-music-toggle:hover {
+    color: @mauve;
+}
+
+#custom-music-toggle.playing {
+    color: @green;
+}
+
+#custom-music-toggle.paused {
+    color: @overlay2;
+}
+
+#custom-music-title {
+    color: @subtext1;
+    padding: 0 6px;
+    margin-right: 10px;
+}
+
+/* 分隔线：工作区 ⟷ 音乐控件、控件 ⟷ 曲名
+ * 用 border-left 而不是单独的符号模块：模块本身带 hide-empty-text，
+ * Sidra 没开时整块被移除，边框跟着消失，不会留孤零零的竖线 */
+#custom-music-prev {
+    border-left: 2px solid @overlay2;
+    margin-left: 12px;
+    padding-left: 12px;
+}
+
+#custom-music-title {
+    border-left: 2px solid @overlay2;
+    margin-left: 8px;
+    padding-left: 12px;
+}
+
+#custom-music-title.playing {
+    color: @text;
+}
+
+#custom-music-title.paused {
+    color: @overlay1;
+}
+
+/* 来源区分：网页（B站）用 B站粉 #fb7299，别的网页用 sky；暂停时压暗一档，和 Apple Music 一眼分清 */
+#custom-music-title.bili {
+    color: #d1708d;
+}
+
+#custom-music-title.bili.playing {
+    color: #fb7299;
+}
+
+#custom-music-title.web {
+    color: @overlay1;
+}
+
+#custom-music-title.web.playing {
+    color: @sky;
+}

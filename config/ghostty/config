@@ -1,0 +1,12 @@
+# 1. 先加载完整 Catppuccin Mocha 主题（内置，无需下载文件）
+theme = Catppuccin Mocha
+
+# 2. 覆盖背景色（和主题相同，但为了透明度单独写）
+background = "#1e1e2e"
+
+# 3. 透明度（主题不会设这个，所以要写）
+background-opacity = 0.75
+
+# 4. 字体统一
+font-family = JetBrainsMono Nerd Font
+font-size = 13

@@ -1,0 +1,23 @@
+# Morandi Canvas —— ghostty 终端配色（随主题包安装）
+palette = 0=#3f3735
+palette = 1=#d09090
+palette = 2=#9db899
+palette = 3=#d4be98
+palette = 4=#8bb5db
+palette = 5=#bfb6de
+palette = 6=#87b4a8
+palette = 7=#cec4c2
+palette = 8=#4d4543
+palette = 9=#c38d96
+palette = 10=#9db899
+palette = 11=#dcab9a
+palette = 12=#8fc5c9
+palette = 13=#d0a5ba
+palette = 14=#79b3cb
+palette = 15=#f0e6e3
+background = #292220
+foreground = #f0e6e3
+cursor-color = #afb7df
+cursor-text = #292220
+selection-background = #4d4543
+selection-foreground = #f0e6e3

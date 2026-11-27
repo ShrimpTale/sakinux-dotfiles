@@ -1,0 +1,32 @@
+# ============================================================
+# Morandi Canvas —— 原创主题包（沿用 26 槽「格式标准」）
+# 关键词：百搭 / 中性画布 / 莫兰迪灰调
+# 参考：Radix Colors 的分层灰阶 · Solarized 的等亮度强调色 · 莫兰迪色系的掺灰低彩度
+# 规则见 make-canvas.py（CIELAB 计算，可复现）
+# ============================================================
+name = "morandi-canvas"
+display = "Morandi Canvas 百搭画布"
+family = "Morandi"
+variant = "Canvas 百搭画布"
+appearance = "dark"
+accent = "mauve"          # 签名色 = 灰紫 #afb7df（中性、不抢戏）
+source = "原创：CIELAB 规则生成（中性 L*8-96/C*≤4 暖灰；强调色统一 L*≈72/C*≈20 等亮度掺灰）"
+
+[names]
+ghostty = "morandi-canvas"          # 自定义主题文件，随主题包一起安装
+fcitx5 = "morandi-canvas"
+gtk = "morandi-canvas"
+starship = "morandi_canvas"
+hypr = "morandi-canvas"
+
+[extras]
+accent_soft = "#959cbe"
+hover_bg = "#362e2a"
+placeholder = "#f0e6e399"
+shadow = "rgba(0, 0, 0, 0.55)"
+panel_bg = "rgba(41, 34, 32, 0.90)"
+nemo_view_bg = "rgba(43, 38, 39, 0.78)"
+folder_shade = "#9ca3ca"
+
+[waybar]
+bar_bg = "shade(@mauve, 0.35)"

@@ -1,0 +1,23 @@
+# Nordic Fjord —— ghostty 终端配色（由主题包自动安装到 ~/.config/ghostty/themes/）
+palette = 0=#2c323a
+palette = 1=#c5847d
+palette = 2=#8db99c
+palette = 3=#d1c49e
+palette = 4=#92aad3
+palette = 5=#a6acd3
+palette = 6=#83b2b9
+palette = 7=#afb6c0
+palette = 8=#383f47
+palette = 9=#b98a83
+palette = 10=#8db99c
+palette = 11=#cca78e
+palette = 12=#97bfce
+palette = 13=#c6bbd3
+palette = 14=#80a8c6
+palette = 15=#d3d8de
+background = #1a1e23
+foreground = #d3d8de
+cursor-color = #90abcb
+cursor-text = #1a1e23
+selection-background = #383f47
+selection-foreground = #d3d8de

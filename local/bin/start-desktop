@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+# start-desktop — tty1 登录后自动拉起 Hyprland（免显示管理器方案）
+#
+# 2026-09-27 v2 修正：主路径改回 uwsm，与 SDDM 时代 hyprland-uwsm.desktop 完全等价
+#   （uwsm start -e -D Hyprland hyprland.desktop）。
+#   注意 may-start 必须带 -i：uwsm 的「是否登录 shell」检查读的是 uwsm 父进程的
+#   /proc/<ppid>/cmdline，要求以 "-" 开头。本脚本被 ~/.bash_profile 调用时父进程是
+#   bash（cmdline 不含 "-"），不带 -i 会被判 "Not in login shell" 而静默失败 ——
+#   v1 就是这样退回了裸 start-hyprland，丢掉 graphical-session.target，
+#   于是 XDG 自启（blueman/clash-verge/nm-applet/bongocat/fcitx5…）全部没起来。
+set -u
+
+LOG="$HOME/.local/state/start-desktop.log"
+mkdir -p "$(dirname "$LOG")"
+log() { printf '%s %s\n' "$(date '+%F %T')" "$*" >> "$LOG"; }
+
+[ -n "${WAYLAND_DISPLAY:-}" ] && exit 0
+[ -n "${DISPLAY:-}" ] && exit 0
+[ "$(tty 2>/dev/null)" = "/dev/tty1" ] || exit 0
+
+log "==== tty1 登录，开始启动桌面 ===="
+clear
+echo "== 正在启动 Hyprland（tty1）=="
+echo "   救援入口：Ctrl+Alt+F2 登录 tty2"
+echo
+
+# 1) 首选 uwsm
+if command -v uwsm >/dev/null 2>&1; then
+  # 注意：uwsm check may-start 默认最多等 graphical.target 60 秒（-g 60）。
+  # 开机慢时（如 Wi-Fi 连不上 → network-online 卡满 60s → graphical.target 迟迟不到）
+  # 这里会静默阻塞；千万不要把输出重定向掉，否则屏幕看起来像死机（2026-11-21 事故根因）。
+  if uwsm check may-start -i; then
+    log "may-start -i 通过 -> uwsm start -e -D Hyprland hyprland.desktop"
+    uwsm start -e -D Hyprland hyprland.desktop
+    rc=$?
+    log "uwsm start 退出 rc=$rc"
+    [ "$rc" -eq 0 ] && exit 0
+  else
+    log "may-start -i 未通过：$(uwsm check may-start -i -v 2>&1 | tr '\n' ' ' | cut -c1-400)"
+  fi
+fi
+
+# 2) 兜底：补齐 SDDM 会设置的环境变量后裸启动（自启会缺，仅保证能进桌面）
+log "兜底路径：start-hyprland + 手工补 SDDM 环境"
+export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=Hyprland
+export XDG_SESSION_DESKTOP=Hyprland
+export DESKTOP_SESSION=hyprland
+if command -v start-hyprland >/dev/null 2>&1; then
+  start-hyprland
+  rc=$?
+  log "start-hyprland 退出 rc=$rc"
+  [ "$rc" -eq 0 ] && exit 0
+fi
+
+echo
+echo "!! 桌面没起来，已退回登录 shell。救援方法："
+echo "   a) 临时回到图形登录界面： sudo systemctl enable --now sddm"
+echo "   b) 直接重试：             uwsm start -e -D Hyprland hyprland.desktop"
+echo "   c) 看日志：               cat ~/.local/state/start-desktop.log"
+echo "                             journalctl -b -p warning | tail -50"
+echo
+exit 0

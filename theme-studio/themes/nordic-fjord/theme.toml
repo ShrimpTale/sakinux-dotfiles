@@ -1,0 +1,33 @@
+# ============================================================
+# Nordic Fjord —— 原创主题包（沿用 Catppuccin 26 槽「格式标准」）
+# 关键词：北欧风 / 冷淡 / 高级感
+# 设计规则见同目录生成脚本 make-nordic.py（HSL 可复现，不是凭感觉填的）
+# ============================================================
+name = "nordic-fjord"
+display = "Nordic Fjord 北欧·峡湾"
+family = "Nordic"
+variant = "Fjord 北欧·峡湾"
+appearance = "dark"
+accent = "mauve"          # 签名色 = 冰川蓝 #90abcb
+source = "原创：HSL 规则生成（中性 214° 色相、饱和≤18%；强调色饱和≤42%、明度 62-86%）"
+
+# 只写"主题名"而不是色值的配置
+[names]
+ghostty = "nordic-fjord"            # 自定义主题文件，随主题包一起安装
+fcitx5 = "nordic-fjord"
+gtk = "nordic-fjord"
+starship = "nordic_fjord"           # 需在 starship.toml 里有同名的色板段
+hypr = "nordic-fjord"
+
+# 非 26 槽位的语义色
+[extras]
+accent_soft = "#7a91ad"           # 预留槽（原先锁屏的大时钟/头像环用）
+hover_bg = "#22282d"                 # wlogout 按钮 hover 底
+placeholder = "#d3d8de99"           # 预留槽（原先锁屏输入框占位文字）（正文色 60%）
+shadow = "rgba(0, 0, 0, 0.6)"                     # swaync 卡片阴影（比猫猫那套更轻，收"高级感"）
+panel_bg = "rgba(26, 30, 35, 0.90)"                 # wlogout 半透明底板
+nemo_view_bg = "rgba(28, 34, 42, 0.78)"         # Nemo 文件视图底（跟随主题）
+folder_shade = "#7f97b3"         # Papirus 文件夹图标内层阴影
+
+[waybar]
+bar_bg = "shade(@mauve, 0.38)"                     # 栏底：比默认再压深一点

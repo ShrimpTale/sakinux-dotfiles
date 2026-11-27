@@ -1,0 +1,232 @@
+#!/usr/bin/env bash
+# zhuti —— 在终端里切换桌面配色主题包
+#
+#   主题由「系列 + 变体」两级组成，两种写法都能用：
+#     zhuti Nordic Fjord          zhuti Nordic            ← 系列
+#     zhuti Catppuccin Latte      zhuti Latte             ← 变体
+#     zhuti Nordic Fjord 就是 nordic-fjord 这个主题包
+#
+#   zhuti                交互选择（fzf 带真彩 26 槽色带预览；无 tty 退回编号菜单）
+#   zhuti list           列出全部主题包（系列 / 变体 / 外观 / 包名）+ 色带
+#   zhuti current        当前主题（显示为 系列 · 变体）
+#   zhuti preview <主题>  只看色带，不切换
+#   zhuti dry <主题>      干跑，不写入
+#   zhuti rollback [时间戳] 无参数列备份；带时间戳则整体还原
+#   zhuti -h             帮助
+#
+# 可选开关：--dry（干跑） --gtk（连带切 GTK 系统主题）
+# 引擎在 theme-studio/theme-switch.py（备份 / 热重载 / 存在性检查都在那里）
+set -uo pipefail
+
+ROOT="${THEME_STUDIO:-$(cd "$(dirname "$(readlink -f "$0")")" && pwd)}"
+ENGINE="$ROOT/theme-switch.py"
+THEMES="$ROOT/themes"
+
+R=$'\033[0m'; DIM=$'\033[2m'; BOLD=$'\033[1m'; RED=$'\033[31m'; GREEN=$'\033[32m'; YEL=$'\033[33m'
+
+die() { printf '%s✗ %s%s\n' "$RED" "$1" "$R" >&2; exit 1; }
+
+[[ -f "$ENGINE" ]] || die "找不到引擎：$ENGINE"
+command -v python3 >/dev/null || die "需要 python3"
+
+names() { for d in "$THEMES"/*/; do [[ -f "$d/palette.env" ]] && basename "$d"; done | sort; }
+
+field() { # field <包名> <theme.toml 的键>
+  python3 -c 'import tomllib,sys;d=tomllib.load(open(sys.argv[1],"rb"));print(d.get(sys.argv[2],""))' \
+    "$THEMES/$1/theme.toml" "$2" 2>/dev/null
+}
+
+theme_line() { # 「系列 · 变体」
+  local f v; f="$(field "$1" family)"; v="$(field "$1" variant)"
+  if [[ -n "$f" ]]; then printf '%s · %s' "$f" "${v:-$(field "$1" display)}"; else field "$1" display; fi
+}
+
+resolve() { # 归一化匹配（忽略大小写/重音/空格）：系列、变体、系列+变体、包名、前缀都能命中
+  python3 - "$THEMES" "$@" <<'PY'
+import pathlib, sys, tomllib, unicodedata, re
+
+themes_dir = pathlib.Path(sys.argv[1])
+query = " ".join(a for a in sys.argv[2:] if not a.startswith("-"))
+
+def norm(s: str) -> str:
+    s = unicodedata.normalize("NFKD", s)
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9]", "", s.lower())
+
+cands = []
+for d in sorted(themes_dir.iterdir()):
+    if not (d / "palette.env").exists():
+        continue
+    meta = tomllib.loads((d / "theme.toml").read_text()) if (d / "theme.toml").exists() else {}
+    fam, var = meta.get("family", ""), meta.get("variant", meta.get("display", d.name))
+    cands.append({"slug": d.name, "keys": [norm(d.name), norm(fam + var), norm(var), norm(meta.get("display", ""))]})
+
+q = norm(query)
+if not q:
+    sys.exit(1)
+for c in cands:                       # 精确
+    if q in c["keys"]:
+        print(c["slug"]); sys.exit(0)
+for c in cands:                       # 前缀 > 包含
+    if any(k.startswith(q) for k in c["keys"] if k):
+        print(c["slug"]); sys.exit(0)
+for c in cands:
+    if any(q in k for k in c["keys"] if k):
+        print(c["slug"]); sys.exit(0)
+
+# 兜底：子序列模糊匹配，但只在结果唯一时才认（防手滑打错，也防瞎猜）
+def subseq(q: str, k: str) -> bool:
+    it = iter(k)
+    return all(ch in it for ch in q)
+
+fuzzy = [c["slug"] for c in cands if any(subseq(q, k) for k in c["keys"] if k)]
+if len(fuzzy) == 1:
+    print(fuzzy[0]); sys.exit(0)
+if len(fuzzy) > 1:
+    print(f"多个主题都能匹配「{query}」：{', '.join(fuzzy)}，请说得更具体", file=sys.stderr)
+sys.exit(1)
+PY
+}
+
+catalog() { # 给报错用的清单
+  local n out=()
+  for n in $(names); do out+=("$(theme_line "$n")  [$n]"); done
+  printf '%s' "$(IFS=$'\n'; echo "${out[*]}")"
+}
+
+swatch() { # 26 槽真彩色带
+  local f="$THEMES/$1/palette.env" line k v
+  while IFS= read -r line; do
+    [[ "$line" == *"="* ]] || continue
+    k="${line%%=*}"; v="${line#*=}"
+    k="${k//[[:space:]]/}"
+    [[ -z "$k" || "$k" == \#* ]] && continue
+    v="${v//\"/}"; v="${v//[[:space:]]/}"; v="${v#\#}"
+    [[ ${#v} -ge 6 ]] || continue
+    printf '\033[48;2;%d;%d;%dm \033[0m' "0x${v:0:2}" "0x${v:2:2}" "0x${v:4:2}"
+  done < "$f"
+  printf '\n'
+}
+
+extras() {
+  python3 -c '
+import tomllib,sys
+d=tomllib.load(open(sys.argv[1],"rb"))
+m={**d.get("extras",{}),**d.get("waybar",{})}
+print("   ".join(f"{k}={v}" for k,v in m.items()))' "$THEMES/$1/theme.toml" 2>/dev/null
+}
+
+cur() { python3 "$ENGINE" current 2>/dev/null; }
+
+usage() { sed -n '2,/^set -/p' "$0" | sed '$d' | sed 's/^# \{0,1\}//'; }
+
+preview() {
+  local n="$1"
+  [[ -d "$THEMES/$n" ]] || die "没有这个主题包：$n"
+  printf '\n%s%s%s   %s%s · %s%s\n' "$BOLD" "$(field "$n" display)" "$R" "$DIM" "$n" "$(field "$n" appearance)" "$R"
+  printf '%s' "$DIM"; swatch "$n"; printf '%s' "$R"
+  printf '\n%s%s%s\n' "$DIM" "$(extras "$n")" "$R"
+}
+
+do_switch() {
+  local n="$1"; shift
+  local out rc
+  printf '%s切换中…%s\n' "$DIM" "$R"
+  out="$(python3 "$ENGINE" switch "$n" --apply --reload "$@" 2>&1)"; rc=$?
+  printf '%s\n' "$out"
+  if [[ $rc -eq 0 ]]; then
+    printf '\n%s✓ 已切到 %s%s%s\n' "$GREEN" "$BOLD" "$(theme_line "$n")" "$R"
+    printf '%s  立即生效：waybar、Hyprland 边框、swaync、starship；ghostty 新开窗口生效%s\n' "$DIM" "$R"
+    printf '%s  下次启动才换：yazi、fuzzel、wlogout、fastfetch、cava%s\n' "$DIM" "$R"
+  elif grep -q "unrecognized arguments\|invalid choice\|^usage:" <<<"$out"; then
+    die "命令行参数有误，本次没有改动任何文件。用法示例：zhuti Nordic Fjord"
+  else
+    die "切换失败。文件若已部分写入，可用 zhuti rollback <时间戳> 整体还原"
+  fi
+}
+
+cmd_list() {
+  local c n
+  c="$(cur)"
+  printf '%s%-24s %-16s %-21s %s%s\n' "$BOLD" "主题包（系列 · 变体）" "外观" "包名" "色带" "$R"
+  for n in $(names); do
+    printf '%s %s%-22s%s %-6s %s%-20s%s ' \
+      "$([[ "$n" == "$c" ]] && printf '*' || printf ' ')" "$BOLD" "$(theme_line "$n")" "$R" \
+      "$(field "$n" appearance)" "$DIM" "$n" "$R"
+    swatch "$n"
+  done
+  printf '\n%s* = 当前主题；切换示例：zhuti Nordic Fjord / zhuti Latte%s\n' "$DIM" "$R"
+}
+
+picker() {
+  local c sel="" line
+  c="$(cur)"
+  if [[ -t 0 && -t 1 ]] && command -v fzf >/dev/null; then
+    line="$(for n in $(names); do printf '%s\t%s  [%s]%s\n' "$n" "$(theme_line "$n")" "$(field "$n" appearance)" \
+        "$([[ "$n" == "$c" ]] && printf '  ← 当前' || true)"; done | \
+      fzf --height=~60% --reverse --delimiter=$'\t' --with-nth=2.. \
+          --prompt='配色主题 > ' --pointer='▶' \
+          --header="↑↓ 选择 · 回车应用 · Esc 取消（当前：$(theme_line "$c")）" \
+          --preview "$0 preview {1}" --preview-window 'right,50%,border-left')" || return 0
+    sel="${line%%$'\t'*}"
+  else
+    local i=1 arr=() ans
+    printf '\n%s可用的主题包：%s\n' "$BOLD" "$R"
+    for n in $(names); do
+      arr+=("$n")
+      printf '  %s%d)%s %-24s ' "$YEL" "$i" "$R" "$(theme_line "$n")"
+      printf '%s' "$DIM"; swatch "$n"; printf '%s' "$R"
+      [[ "$n" == "$c" ]] && printf '     %s← 当前%s\n' "$DIM" "$R"
+      i=$((i+1))
+    done
+    printf '\n选择编号（1-%d，直接回车取消）：' "${#arr[@]}"
+    read -r ans || return 0
+    [[ "$ans" =~ ^[0-9]+$ ]] || { printf '已取消\n'; return 0; }
+    sel="${arr[$((ans-1))]:-}"
+    [[ -z "$sel" ]] && { printf '编号超出范围，已取消\n'; return 0; }
+  fi
+  [[ -z "$sel" ]] && return 0
+  do_switch "$sel"
+}
+
+# ---- 参数解析：过滤掉已知开关，其余拼成主题查询 ----
+ARGS=(); FLAGS=()
+for a in "$@"; do
+  case "$a" in
+    --dry|--gtk)  FLAGS+=("$a") ;;
+    -h|--help)    set -- -h ;;
+    *)            ARGS+=("$a") ;;
+  esac
+done
+
+CMD="${1:-}"
+case "$CMD" in
+  -h|--help|help)      usage; exit 0 ;;
+  ""|pick|choose)      picker; exit 0 ;;
+  list|ls)             cmd_list; exit 0 ;;
+  current|cur)         c="$(cur)"; printf '%s\n' "$(theme_line "$c")  [$c]"; exit 0 ;;
+  rollback|undo)       python3 "$ENGINE" rollback "${ARGS[1]:-}"; exit 0 ;;
+  preview|show|dry)    ;;
+  switch|apply|use)    set -- "${ARGS[@]:1}" ;;
+  *)                   : ;;
+esac
+
+Q=("${ARGS[@]}")
+case "$CMD" in
+  preview|show)  Q=("${ARGS[@]:1}") ;;
+  dry)           Q=("${ARGS[@]:1}") ;;
+  switch|apply|use) Q=("${ARGS[@]:1}") ;;
+esac
+
+[[ ${#Q[@]} -eq 0 ]] && die "请指定主题，例如：zhuti Nordic Fjord（可用主题见 zhuti list）"
+if ! N="$(resolve "${Q[@]}")"; then
+  die "没有匹配的主题：${Q[*]}
+可用：
+$(catalog)"
+fi
+
+case "$CMD" in
+  preview|show) preview "$N" ;;
+  dry)          python3 "$ENGINE" switch "$N" ;;
+  *)            do_switch "$N" "${FLAGS[@]+"${FLAGS[@]}"}" ;;
+esac

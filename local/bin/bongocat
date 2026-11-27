@@ -1,0 +1,6 @@
+#!/bin/sh
+# BongoCat v1.12.0 启动入口（预编译包，安装于 ~/.local/opt/BongoCat）
+# 输入走 evdev 后端，绕开 XWayland「只在鼠标悬停时收得到输入」的限制
+export BONGOCAT_ENABLE_EVDEV=1
+cd "$HOME/.local/opt/BongoCat" || exit 1
+exec ./BongoCat "$@"

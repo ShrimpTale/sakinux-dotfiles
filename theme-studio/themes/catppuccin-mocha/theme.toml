@@ -1,0 +1,32 @@
+# ============================================================
+# Catppuccin Mocha —— 主题包（同格式 26 槽 + 语义附加槽）
+# 现有桌面配色快照（20 文件 / 300 处命中，全部落在这 26 槽）
+# ============================================================
+name = "catppuccin-mocha"
+display = "Catppuccin Mocha"
+family = "Catppuccin"
+variant = "Mocha"
+appearance = "dark"
+accent = "mauve"
+source = "现有桌面配色快照（20 文件 / 300 处命中，全部落在这 26 槽）"
+
+# 只写"主题名"而不是色值的配置（这里的名字必须是目标程序真实存在的主题名）
+[names]
+ghostty = "Catppuccin Mocha"
+fcitx5 = "catppuccin-mocha-mauve"
+gtk = "catppuccin-mocha-mauve-standard+default"
+starship = "catppuccin_mocha"
+hypr = "catppuccin-mocha"            # 同上
+
+# 非 26 槽位的语义色（各主题可"脱钩"，不必照抄暗色值）
+[extras]
+accent_soft = "#ad8dd2"           # 预留槽（原先锁屏的大时钟/头像环用）
+hover_bg = "#303242"                 # wlogout 按钮 hover 底
+placeholder = "#ffffff99"           # 预留槽（原先锁屏输入框占位文字）
+shadow = "rgba(0, 0, 0, 0.8)"                     # swaync 卡片阴影
+panel_bg = "rgba(30, 30, 46, 0.90)"                 # wlogout 半透明底板
+nemo_view_bg = "rgba(32, 34, 53, 0.78)"         # 主人 gtk.css 里 Nemo 文件视图底（base 微提亮 + 0.78 透明）
+folder_shade = "#b792e3"         # Papirus 文件夹图标内层阴影（mauve × 0.90）
+
+[waybar]
+bar_bg = "shade(@mauve, 0.4)"                     # 栏底

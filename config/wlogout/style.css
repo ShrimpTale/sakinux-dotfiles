@@ -1,0 +1,61 @@
+/* wlogout 样式：HyDE style_1 的观感 + 本机 Catppuccin Mocha 配色（2026-10-13 移植）
+ * - 窗口全透明，磨砂由 Hyprland 层规则给：namespace = logout_dialog
+ *   （hyprland.lua 的 wlogout-blur: blur = true, ignore_alpha = 0）
+ * - 按钮深底 + 图标居中；悬停时圆角化 + 图标放大 + 弹性过渡（HyDE 的手法）
+ * - 图标沿用本机 ~/.config/wlogout/icons 里的 svg
+ * 备份：style.css.bak.20261013-1302-hyde */
+@define-color main_bg  rgba(24, 24, 37, 0.85);    /* mantle */
+@define-color main_fg  #cdd6f4;                   /* text */
+@define-color hover_bg rgba(203, 166, 247, 0.35); /* mauve 35% */
+@define-color focus_bg rgba(203, 166, 247, 0.55); /* mauve 55% */
+
+* {
+    background-image: none;
+    font-size: 16px;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+window {
+    background-color: transparent;
+}
+
+button {
+    color: @main_fg;
+    background-color: @main_bg;
+    outline-style: none;
+    border: none;
+    border-width: 0px;
+    border-radius: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+}
+
+button:focus {
+    background-color: @focus_bg;
+    background-size: 24%;
+}
+
+/* 悬停幅度已收敛（2026-10-13）：图标 20% → 26%（原来放大到 40%），
+ * 并去掉原先「悬停时收缩 margin 让整块浮起」的位移，只保留配色 + 圆角变化。
+ * 想更明显/更含蓄，只改这里的 26% 一个数即可。 */
+button:hover {
+    background-color: @hover_bg;
+    background-size: 26%;
+    border-radius: 12px;
+    transition: all 0.18s ease-out;
+}
+
+/* 常态：两端圆角，按钮之间留 12px */
+#lock      { background-image: url("@@HOME@@/.config/wlogout/icons/lock.svg");      border-radius: 12px 0px 0px 12px; margin: 12px 0px 12px 12px; }
+#logout    { background-image: url("@@HOME@@/.config/wlogout/icons/logout.svg");    border-radius: 0px;               margin: 12px 0px 12px 0px; }
+#suspend   { background-image: url("@@HOME@@/.config/wlogout/icons/suspend.svg");   border-radius: 0px;               margin: 12px 0px 12px 0px; }
+#shutdown  { background-image: url("@@HOME@@/.config/wlogout/icons/shutdown.svg");  border-radius: 0px;               margin: 12px 0px 12px 0px; }
+#hibernate { background-image: url("@@HOME@@/.config/wlogout/icons/hibernate.svg"); border-radius: 0px;               margin: 12px 0px 12px 0px; }
+#reboot    { background-image: url("@@HOME@@/.config/wlogout/icons/reboot.svg");    border-radius: 0px 12px 12px 0px; margin: 12px 12px 12px 0px; }
+
+label {
+    font-size: 14px;
+    color: @main_fg;
+}

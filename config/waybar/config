@@ -1,0 +1,178 @@
+{
+  "layer": "top",
+  "height": 30,
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-bottom": 0,
+  "margin-right": 0,
+  "spacing": 4,
+
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces",
+    "custom/music-prev",
+    "custom/music-toggle",
+    "custom/music-next",
+    "custom/music-title"
+  ],
+  "modules-center": [
+    "tray"
+  ],
+
+  "tray": {
+    "spacing": 10,
+    "icons": {
+      "sdl-appindicator-*": "$HOME/.config/waybar/icons/bongocat.png"
+    }
+  },
+  "modules-right": [
+    "custom/temp",
+    "disk",
+    "bluetooth",
+    "network",
+    "pulseaudio",
+    "backlight",
+    "custom/battery",
+    "custom/clock"
+  ],
+
+  "custom/launcher": {
+    "format": "",
+    "on-click": "ghostty -e bash -c \"cd ~ && fastfetch; exec bash\"",
+    "tooltip": false
+  },
+
+  "custom/music-prev": {
+    "exec": "$HOME/.config/waybar/media-player.sh show-prev",
+    "interval": 1,
+    "signal": 8,
+    "return-type": "json",
+    "hide-empty-text": true,
+    "format": "{}",
+    "on-click": "$HOME/.config/waybar/media-player.sh act-prev"
+  },
+
+  "custom/music-toggle": {
+    "exec": "$HOME/.config/waybar/media-player.sh show-toggle",
+    "interval": 1,
+    "signal": 8,
+    "return-type": "json",
+    "hide-empty-text": true,
+    "format": "{}",
+    "on-click": "$HOME/.config/waybar/media-player.sh act-toggle",
+    "on-click-right": "$HOME/.config/waybar/media-player.sh act-raise"
+  },
+
+  "custom/music-next": {
+    "exec": "$HOME/.config/waybar/media-player.sh show-next",
+    "interval": 1,
+    "signal": 8,
+    "return-type": "json",
+    "hide-empty-text": true,
+    "format": "{}",
+    "on-click": "$HOME/.config/waybar/media-player.sh act-next"
+  },
+
+  "custom/music-title": {
+    "exec": "$HOME/.config/waybar/media-player.sh show-title",
+    "interval": 1,
+    "signal": 8,
+    "return-type": "json",
+    "hide-empty-text": true,
+    "format": "{}",
+    "on-click": "$HOME/.config/waybar/media-player.sh act-raise",
+    "on-scroll-up": "$HOME/.config/waybar/media-player.sh act-seek-fwd",
+    "on-scroll-down": "$HOME/.config/waybar/media-player.sh act-seek-back"
+  },
+
+  "custom/notification": {
+    "format": " ",
+    "on-click": "swaync-client -t",
+    "on-click-right": "swaync-client -c",
+    "tooltip": false
+  },
+
+
+  "hyprland/workspaces": {
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "Ⅰ",
+      "2": "Ⅱ",
+      "3": "Ⅲ",
+      "4": "Ⅳ",
+      "5": "Ⅴ",
+      "6": "Ⅵ",
+      "7": "Ⅶ",
+      "8": "Ⅷ",
+      "9": "Ⅸ",
+      "10": "Ⅹ",
+      "active": "●",
+      "default": "○"
+    }
+  },
+
+  "custom/temp": {
+    "exec": "~/.config/waybar/temp.sh",
+    "interval": 2,
+    "return-type": "json",
+    "tooltip": false
+  },
+
+  "disk": {
+    "interval": 30,
+    "format": "  {percentage_used}%",
+    "path": "/",
+    "tooltip": false
+  },
+
+  "bluetooth": {
+    "format": "󰂯",
+    "format-connected": "󰂱",
+    "format-disconnected": "󰂲",
+    "tooltip-format": "{controller_alias}",
+    "on-click": "blueman-manager"
+  },
+
+  "custom/clock": {
+    "exec": "$HOME/.config/waybar/clock-module.py",
+    "return-type": "json",
+    "interval": 1,
+    "signal": 1,
+    "on-click": "$HOME/.config/waybar/clock-toggle.sh",
+    "tooltip": true
+  },
+
+
+  "network": {
+    "format-wifi": "󰤨 {signalStrength}%",
+    "format-ethernet": "󰈀 Connected",
+    "format-disconnected": "󰤭 网络未连接喵",
+    "tooltip": false,
+    "on-click": "$HOME/.local/bin/wifi-menu"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 已静音喵",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "tooltip": false,
+    "on-click": "GTK_THEME=catppuccin-mocha-mauve-standard+default pavucontrol",
+  },
+
+  "backlight": {
+    "format": "󰃟 {percent}%",
+    "device": "intel_backlight",
+    "tooltip": false
+  },
+
+  "custom/battery": {
+    "exec": "$HOME/.config/waybar/battery.sh",
+    "return-type": "json",
+    "interval": 5,
+    "format": "{}",
+    "tooltip": true
+  }
+}

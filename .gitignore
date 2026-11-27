@@ -1,0 +1,17 @@
+# 备份与快照
+*.bak
+*.bak-*
+*.bak.*
+*.orig
+
+# Python
+__pycache__/
+*.pyc
+
+# theme-studio 运行时产物
+theme-studio/backups/
+theme-studio/state
+
+# 编辑器 / 系统
+.DS_Store
+*.swp

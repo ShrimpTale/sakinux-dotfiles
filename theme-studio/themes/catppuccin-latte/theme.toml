@@ -1,0 +1,32 @@
+# ============================================================
+# Catppuccin Latte —— 主题包（同格式 26 槽 + 语义附加槽）
+# 以 Mocha 主题包为标准创作的 Catppuccin Latte 版本（槽位 1:1 角色对齐，附加槽按亮/暗语义重取）
+# ============================================================
+name = "catppuccin-latte"
+display = "Catppuccin Latte"
+family = "Catppuccin"
+variant = "Latte"
+appearance = "light"
+accent = "mauve"
+source = "以 Mocha 主题包为标准创作的 Catppuccin Latte 版本（槽位 1:1 角色对齐，附加槽按亮/暗语义重取）"
+
+# 只写"主题名"而不是色值的配置（这里的名字必须是目标程序真实存在的主题名）
+[names]
+ghostty = "Catppuccin Latte"
+fcitx5 = "catppuccin-latte-mauve"
+gtk = "catppuccin-latte-mauve-standard+default"
+starship = "catppuccin_latte"
+hypr = "catppuccin-latte"            # 同上
+
+# 非 26 槽位的语义色（各主题可"脱钩"，不必照抄暗色值）
+[extras]
+accent_soft = "#7430cb"           # 预留槽（原先锁屏的大时钟/头像环用）
+hover_bg = "#bcc0cc"                 # wlogout 按钮 hover 底
+placeholder = "#4c4f6999"           # 预留槽（原先锁屏输入框占位文字）
+shadow = "rgba(0, 0, 0, 0.15)"                     # swaync 卡片阴影
+panel_bg = "rgba(239, 241, 245, 0.90)"                 # wlogout 半透明底板
+nemo_view_bg = "rgba(241, 245, 252, 0.78)"         # 主人 gtk.css 里 Nemo 文件视图底（base 微提亮 + 0.78 透明）
+folder_shade = "#7633cc"         # Papirus 文件夹图标内层阴影（mauve × 0.90）
+
+[waybar]
+bar_bg = "#e7d7fc"                     # 栏底

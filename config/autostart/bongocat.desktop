@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=BongoCat
+Comment=走包装脚本 ~/.local/bin/bongocat，保证 evdev 全局输入生效
+Exec=@@HOME@@/.local/bin/bongocat --autostart
+Terminal=false
+X-GNOME-Autostart-enabled=true
