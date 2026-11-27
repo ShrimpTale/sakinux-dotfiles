@@ -31,9 +31,9 @@
     <summary>自动</summary>
 
 ```bash
-git clone <this-repo> ~/dotfiles && cd ~/dotfiles
+git clone https://github.com/ShrimpTale/sakinux-dotfiles ~/dotfiles && cd ~/dotfiles
 ./install.sh --dry-run     
-./install.sh               https://github.com/ShrimpTale/sakinux-dotfiles
+./install.sh               
 systemctl --user enable --now cliphist
 ```
 
