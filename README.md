@@ -34,27 +34,27 @@
 
 ```bash
 git clone <this-repo> ~/dotfiles && cd ~/dotfiles
-./install.sh --dry-run     # 先看它要动哪些文件
-./install.sh               # 你原来有的会先备份到 ~/.dotfiles-backup-<时间戳>/
+./install.sh --dry-run     
+./install.sh               
 systemctl --user enable --now cliphist
 ```
 
-装完注销重登一次。缺哪些依赖、还有哪几步得手动做，都在 [docs/install.md](docs/install.md)。
+装完需重启桌面
 
 </details>
 
 <details>
     <summary>手动</summary>
 
-- 基础依赖：`hyprland waybar wlogout rofi swaync ghostty starship fastfetch cliphist`，别忘了 `ttf-jetbrains-mono-nerd`
+- 基础依赖：`hyprland waybar wlogout rofi swaync ghostty starship fastfetch cliphist ttf-jetbrains-mono-nerd`
 - 外观：`catppuccin-gtk-theme-mocha`、`catppuccin-cursors-mocha`、`papirus-icon-theme`
 - 搬文件：`config/` → `~/.config/`，`local/` → `~/.local/`，`gtk-themes/` → `~/.themes/`
-- `config/wlogout/style.css`、`config/fastfetch/config.jsonc`、`config/autostart/bongocat.desktop` 里的 `@@HOME@@` 换成你自己的家目录
-- 图标想跟着主题变色就跑 `python3 theme-studio/icon-variants.py build`
+- `config/wlogout/style.css`、`config/fastfetch/config.jsonc`、`config/autostart/bongocat.desktop` 里的 `@@HOME@@` 换成本地～目录
+- zhuti命令切换主题需要 `python3 theme-studio/icon-variants.py build`
 
 </details>
 
-## 键位
+## 键位，可于hyprland.lua更改
 
 | 键 | 动作 |
 |---|---|
@@ -70,26 +70,16 @@ systemctl --user enable --now cliphist
 | `Super+Alt+V` | 剪贴板历史 |
 | `Super+Delete` | wlogout 关机菜单 |
 
-剩下的快捷键、鼠标操作在 [docs/keybinds.md](docs/keybinds.md)。
-
-## 还想看细节
-
-- [装的时候有哪些坑、哪些值是绑机器的](docs/install.md)
-- [完整键位](docs/keybinds.md)
-- [26 槽怎么换色、6 个生成器各干什么](docs/theme-studio.md)
-- [为什么是这么设计的，代价是什么](docs/design.md)
-- [没传的那些（壁纸/锁屏/rofi 主题/图标/光标…）是谁的、你自己怎么搞](docs/not-included.md)
 
 ## Thanks to
 
-- [HyDE](https://github.com/HyDE-Project/HyDE)：wlogout 的观感是照它的 `style_1` 扒的
+- [HyDE](https://github.com/HyDE-Project/HyDE)：wlogout视觉效果
 - [Catppuccin](https://github.com/catppuccin)：色值、GTK 主题基座、光标、fcitx5 皮肤、ghostty 配色
-- [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) + papirus-folders：图标底子
-- [BongoCat](https://github.com/ayangweb/BongoCat)：右下角那只猫
+- [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) + papirus-folders：图标
+- [BongoCat](https://github.com/ayangweb/BongoCat)：桌宠
 - [waywallen](https://github.com/waywallen/waywallen)：动态壁纸客户端
-- [Hyprland](https://github.com/hyprwm/Hyprland)：配置骨架来自它自带的 Lua 模板
-- wlogout 的图标出自 onlinewebfonts.com 的 Svg Vector Icons
+- [Hyprland](https://github.com/hyprwm/Hyprland)
 
 ## License
 
-MIT，只覆盖我自己写的部分。上游那些授权情况 [这里](docs/not-included.md) 各节都写了。随便抄，抄坏了别怪我。
+MIT， [详见此文件](docs/not-included.md)
