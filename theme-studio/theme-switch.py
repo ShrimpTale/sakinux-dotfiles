@@ -507,7 +507,12 @@ def main() -> int:
     icon_ready = False
     if not args.root and icons_variant_mode():
         icon_ready = ensure_icon_variant(to_name, icon_note, apply=args.apply)
-        if icon_ready and not args.apply:
+        if icon_ready and args.apply:
+            # 变体就位后必须把 Papirus 软链指过去 —— 只 build 不换链的话，
+            # 切完主题其它地方都变了，唯独文件夹图标还是旧颜色（2026-11-27 修）。
+            swap_icon_link(to_name)
+            icon_note.append(f"图标：已换链 -> {VARIANT_PREFIX}{to_name}（瞬时）")
+        elif icon_ready:
             icon_note.append(f"图标：将换链 {PAPIRUS_LIVE} -> {VARIANT_PREFIX}{to_name}（瞬时）")
 
     for path, hits in hits_by.items():

@@ -21,7 +21,7 @@
 | [![fastfetch 与 Nemo](screenshots/fastfetch.png)](screenshots/fastfetch.png) | [![wlogout](screenshots/wlogout.png)](screenshots/wlogout.png) |
 
 > [!NOTE]
-> 基于1920×1200、与`BAT0` 电池，可能需根据设备调整
+> 基于1920×1200、与`BAT0` 电池，可能需根据设备调整，要改哪几处记在[这里](docs/install.md#已知问题)
 
 ## 安装
 
@@ -35,7 +35,7 @@ git clone <this-repo> ~/dotfiles && cd ~/dotfiles
 systemctl --user enable --now cliphist
 ```
 
-装完需重启桌面
+装完需重启桌面。想换主题再加个 `--with-theme-studio`
 
 </details>
 
@@ -46,7 +46,8 @@ systemctl --user enable --now cliphist
 - 外观：`catppuccin-gtk-theme-mocha`、`catppuccin-cursors-mocha`、`papirus-icon-theme`
 - 搬文件：`config/` → `~/.config/`，`local/` → `~/.local/`，`gtk-themes/` → `~/.themes/`
 - `config/wlogout/style.css`、`config/fastfetch/config.jsonc`、`config/autostart/bongocat.desktop` 里的 `@@HOME@@` 换成本地～目录
-- zhuti命令切换主题需要 `python3 theme-studio/icon-variants.py build`
+- 换主题用 `zhuti`（得先装 theme-studio，见[主题系统](docs/theme-studio.md)）；想让图标跟着变色，先跑一次 `python3 theme-studio/icon-variants.py install`
+- `config/fuzzel/` 是早期用 fuzzel 的残留，现在走 rofi
 
 </details>
 
@@ -65,7 +66,18 @@ systemctl --user enable --now cliphist
 | `Super+Alt+X` | 区域截图，存盘 + 进剪贴板 |
 | `Super+Alt+V` | 剪贴板历史 |
 | `Super+Delete` | wlogout 关机菜单 |
+| `Super+Alt+字母` | 常用程序（Firefox、Steam、VSCode、微信…） |
+| `XF86*` | 音量、亮度、播放控制 |
+| `Super+拖拽` / `右键拖拽` / `滚轮` | 移动窗口 / 缩放 / 切工作区 |
 
+全部 38 个绑定在 [docs/keybinds.md](docs/keybinds.md)。
+
+## 其他
+
+- [装的时候有哪些坑、哪些值绑机器](docs/install.md)
+- [6 套主题怎么切，生成器各干什么](docs/theme-studio.md)
+- [为什么这么设计，代价是什么](docs/design.md)
+- [没收录的那些（壁纸、锁屏、rofi 主题…）怎么自己搞](docs/not-included.md)
 
 ## Thanks to
 
@@ -78,4 +90,4 @@ systemctl --user enable --now cliphist
 
 ## License
 
-MIT， [详见此文件](docs/not-included.md)
+MIT，见 [LICENSE](LICENSE)。没收录的那些是谁的、怎么自己搞，写在 [这份清单](docs/not-included.md)
