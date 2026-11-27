@@ -10,13 +10,9 @@
 
 [![桌面](screenshots/desktop.png)](screenshots/desktop.png)
 
-没有 dock，没有桌面图标，就一条 30px 的浮岛顶栏挂在上面，别的基本都靠键盘。
+根据自己使用习惯慢慢手搓的键盘流美化，除了waybar与hyprland别无他物
 
-- **全键盘**：开程序、切窗口、平铺、截图、关机，全有键。鼠标基本只拿来点网页链接
-- **一条栏**：waybar 拆成左中右三块浮岛，缝里透出壁纸。毛玻璃只给 waybar、rofi、wlogout 这三个浮层，普通窗口老老实实不透明
-- **一个调色板**：26 个色槽，改一处，顶栏、关机菜单、终端、GTK、图标、光标、输入法全跟着换
-- **两套自己调的主题**：Morandi Canvas 是用 CIELAB 算出来的，出图前还跑一遍 WCAG 对比度；Nordic Fjord 锁 214° 冷蓝灰
-- **顺手写的小东西**：GTK4 的 Wi-Fi 菜单（763 行，密码走 DBus 不进命令行）、6 个 waybar 模块、Papirus 换色生成器
+大部分功能通过绑定快捷键进行，力图做到简约现代
 
 ## Preview
 
@@ -25,7 +21,7 @@
 | [![fastfetch 与 Nemo](screenshots/fastfetch.png)](screenshots/fastfetch.png) | [![wlogout](screenshots/wlogout.png)](screenshots/wlogout.png) |
 
 > [!NOTE]
-> 这套是照着 1920×1200、Intel 核显、`BAT0` 电池调的。换机器要改哪几处，我记在 [已知问题](docs/install.md#已知问题) 里了。
+> 基于1920×1200、与`BAT0` 电池，可能需根据设备调整
 
 ## 安装
 
