@@ -1,6 +1,6 @@
 # sakinux
 
-> 练手向配置，不是发行版。壁纸、锁屏、私有工具链不在仓库里 —— 见 [未收录清单](docs/not-included.md)。
+> 自用手搓键盘流Hyprland桌面美化
 
 ![Hyprland](https://img.shields.io/badge/Hyprland-0.57-58E1FF?style=for-the-badge&labelColor=%23424242)
 ![Arch](https://img.shields.io/badge/Arch_Linux-rolling-1793D1?style=for-the-badge&labelColor=%23424242)
@@ -12,7 +12,11 @@
 
 - **全键盘**：启动、切窗口、平铺、截图、关机全部有键位，鼠标只用来点链接
 - **一条栏**：waybar 拆成左/中/右三块浮岛，缝隙透出壁纸；毛玻璃只开给 waybar、rofi、wlogout 三个浮层
-- <img width="1920" height="1200" alt="图片" src="https://github.com/user-attachments/assets/2a430378-c8af-42f0-8eea-0b513ec1bec1" />
+<img width="1920" height="1200" alt="图片" src="https://github.com/user-attachments/assets/2a430378-c8af-42f0-8eea-0b513ec1bec1" />
+<img width="1920" height="1199" alt="图片" src="https://github.com/user-attachments/assets/fc991cc0-162e-4c11-94ce-5456c728da93" />
+<img width="1920" height="1200" alt="图片" src="https://github.com/user-attachments/assets/d67740e6-24f2-4692-8f35-4ec6c8341b09" />
+
+
 
 - **一个调色板**：26 个色槽，一处改色，顶栏 / 关机菜单 / 终端 / GTK / 图标 / 光标 / 输入法全跟着变
 - **两套自制主题**：Morandi Canvas（CIELAB 规则生成 + WCAG 对比度回测）、Nordic Fjord（214° 冷蓝灰）
