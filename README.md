@@ -1,4 +1,4 @@
-# sakinux
+# Sakinux
 
 > 自用手搓的键盘流 Hyprland 桌面美化
 
