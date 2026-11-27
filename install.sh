@@ -113,7 +113,6 @@ say ""
 say "== 展开 @@HOME@@"
 expand_home \
     "$HOME/.config/wlogout/style.css" \
-    "$HOME/.config/wlogout/restore-hibernate/style.css.orig" \
     "$HOME/.config/fastfetch/config.jsonc" \
     "$HOME/.config/autostart/bongocat.desktop"
 
@@ -134,7 +133,7 @@ say ""
 say "== 还需要手动做的一次性步骤"
 say "  1) 剪贴板历史：systemctl --user enable --now cliphist"
 say "  2) 字体：pacman -S ttf-jetbrains-mono-nerd（waybar / 终端 / swaync 都用它）"
-say "  3) 图标：装 Papirus 后跑  python3 theme-studio/icon-variants.py build"
+say "  3) 图标：装 Papirus 后跑  python3 theme-studio/icon-variants.py install（第一次），之后切主题会自动换"
 say "  4) 壁纸：本仓库不含壁纸，请自行放 ~/Pictures 并在 hyprland.lua 里替换"
 say "  5) 注销重登（或 hyprctl reload）让 hyprland.lua / 图标 / GTK 主题生效"
 say ""
