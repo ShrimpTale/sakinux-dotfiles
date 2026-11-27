@@ -12,6 +12,8 @@
 
 - **全键盘**：启动、切窗口、平铺、截图、关机全部有键位，鼠标只用来点链接
 - **一条栏**：waybar 拆成左/中/右三块浮岛，缝隙透出壁纸；毛玻璃只开给 waybar、rofi、wlogout 三个浮层
+- <img width="1920" height="1200" alt="图片" src="https://github.com/user-attachments/assets/2a430378-c8af-42f0-8eea-0b513ec1bec1" />
+
 - **一个调色板**：26 个色槽，一处改色，顶栏 / 关机菜单 / 终端 / GTK / 图标 / 光标 / 输入法全跟着变
 - **两套自制主题**：Morandi Canvas（CIELAB 规则生成 + WCAG 对比度回测）、Nordic Fjord（214° 冷蓝灰）
 - **自己写的工具**：GTK4 Wi-Fi 菜单（763 行，密码走 DBus）、6 个 waybar 模块、Papirus 变色变体生成器
