@@ -47,7 +47,7 @@
 
 | 文件 | 说明 |
 |---|---|
-| `README.md` | 主页（101 行）：标题 + 一句注+5 个徽章 + 一段定位 + 6 条功能 + 截图表格 + 2 个安装折叠块 + 键位小表 + 文档索引 + thanks。长内容全部在 `docs/` |
+| `README.md` | 95 行：标题 + 一句注 + 5 徽章 + **主图** + 6 条口语化功能 + 2 图 Preview + 2 个安装折叠块 + 键位表 + 文档索引 + thanks |
 | `docs/design.md` | 设计取舍（6 条）与代价（4 条） |
 | `docs/install.md` | 快速开始 / 依赖 / 仓库结构 / 已知问题 |
 | `docs/keybinds.md` | 完整键位表 |
@@ -57,8 +57,7 @@
 | `LICENSE` | MIT（含上游 attribution 声明） |
 | `.gitignore` | 排除`.bak*`/`__pycache__`/theme-studio 运行时产物 |
 | `CHANGES-vs-live.md` | 本文件 |
-| `screenshots/README.md` | 6 张截图清单 + 每张的拍法（`grim` 命令） |
-| `screenshots/*.png` | 待补（主人自己放） |
+| `screenshots/{desktop,fastfetch,wlogout}.png` | 3 张 1920×1200 实拍（主人上传的附件，已落进仓库，不再依赖 GitHub 附件链接） |
 
 ## 四、保留的「本机专属」，故意不改
 
